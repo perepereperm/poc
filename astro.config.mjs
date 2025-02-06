@@ -27,6 +27,16 @@ export default defineConfig({
 					lang: 'ru',
 				}
 			},
+			head: [
+				{
+					tag: 'script',
+					attrs: {
+						src: "//gc.zgo.at/count.js",
+						'data-goatcounter': "https://poc.goatcounter.com/count",
+						async: true
+					}
+				}
+			],
 			social: {
 				email: 'mailto:titovgs@my.msu.ru',
 				github: 'https://github.com/gtitov/poc'
