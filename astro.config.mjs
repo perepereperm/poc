@@ -1,0 +1,54 @@
+import starlight from '@astrojs/starlight';
+import { defineConfig } from 'astro/config';
+
+// https://astro.build/config
+export default defineConfig({
+	redirects: {
+		'/': '/course',
+	},
+	integrations: [
+		starlight({
+			title: 'Философия картографии',
+			logo: {
+				light: './src/assets/logo-light.svg',
+				dark: './src/assets/logo-dark.svg',
+				replacesTitle: true,
+			},
+			customCss: [
+				// Fontsource files for to regular and semi-bold font weights.
+				'@fontsource/playfair-display/400.css',
+				// Relative path to your custom CSS file
+				'./src/styles/custom.css',
+			],
+			defaultLocale: 'root',
+			locales: {
+				root: {
+					label: 'Русский',
+					lang: 'ru',
+				}
+			},
+			social: {
+				email: 'mailto:titovgs@my.msu.ru',
+				github: 'https://github.com/gtitov/poc'
+			},
+			sidebar: [
+				{
+					label: 'Курс',
+					autogenerate: { directory: 'course' },
+				},
+				{
+					label: 'Эссе',
+					autogenerate: { directory: 'essays' },
+				},
+				{
+					label: 'Рефераты',
+					autogenerate: { directory: 'papers' },
+				},
+				{
+					label: 'Рецензии',
+					autogenerate: { directory: 'reviews' },
+				},
+			],
+		}),
+	],
+});
