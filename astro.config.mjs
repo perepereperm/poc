@@ -56,6 +56,9 @@ export default defineConfig({
 					autogenerate: { directory: 'reviews' },
 				},
 			],
+			editLink: {
+				baseUrl: 'https://github.com/gtitov/poc/edit/main/',
+			},
 		}),
 	],
 });
